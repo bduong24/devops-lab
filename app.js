@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify({ status: "healthy" }));
   } else if (req.url === "/") {
     res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Blade's DevOps Lab - version 3\n");
+    res.end("Blade's DevOps Lab - version 4\n");
   } else {
     res.writeHead(404, { "Content-Type": "text/plain" });
     res.end("Not found\n");
