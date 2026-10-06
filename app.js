@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
   console.log(`${new Date().toISOString()} ${req.method} ${req.url}`);
 
   if (req.url === "/health") {
-    res.writeHead(200, { "Content-Type": "application/json" });
+    res.writeHead(503, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ status: "healthy" }));
   } else if (req.url === "/") {
     res.writeHead(200, { "Content-Type": "text/plain" });
@@ -21,3 +21,4 @@ const server = http.createServer((req, res) => {
 server.listen(port, host, () => {
   console.log(`Server running at http://${host}:${port}`);
 });
+
